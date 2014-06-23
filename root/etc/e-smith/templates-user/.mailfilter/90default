@@ -1,0 +1,36 @@
+{
+  if ($qmail{FilterOrder})
+  {
+
+    # honour EmailForward
+    my $EmailForward = $props{EmailForward}  || '';
+    my $ForwardAddress = $props{ForwardAddress}  || '';
+
+    if ($EmailForward eq 'forward')
+    {
+      $OUT .= "\n";
+      $OUT .= "log \"--- forward mail ---------------- \"\n";
+      $OUT .= "to \"!$ForwardAddress\"";
+    }
+    elsif ($EmailForward eq 'both')
+    {
+      $OUT .= "\n";
+      $OUT .= "log \"--- to the inbox and forward ----- \"\n";
+      $OUT .= "cc Maildir\n";
+      $OUT .= "to \"!$ForwardAddress\"";
+    }
+    else
+    {
+      $OUT .= "\n";
+      $OUT .= "log \"--- to the inbox ----------------- \"\n";
+      $OUT .= "to Maildir";
+    }
+
+  }
+  else
+  {
+      $OUT .= "\n";
+      $OUT .= "log \"--- to the inbox ----------------- \"\n";
+      $OUT .= "to Maildir\n";
+  }
+}

@@ -1,0 +1,16 @@
+{
+    # vim: ft=perl:
+
+    use esmith::AccountsDB;
+    our $adb = esmith::AccountsDB->open_ro or die "Couldn't open AccountsDB";
+
+    $user = $adb->get($USERNAME) or die "No user $USERNAME in AccountsDB";
+    %props = $user->props;
+
+    our $zarafa1 = $props{zarafa} || 'disabled1';
+    our $zarafa2 = ${'zarafa-server'}{GlobalForward} || 'disabled2';
+    our $EmailForward = $props{EmailForward}  || '';
+    our $ForwardAddress = $props{ForwardAddress}  || '';
+
+    $OUT = '';
+}

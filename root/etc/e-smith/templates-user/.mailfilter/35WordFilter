@@ -1,0 +1,44 @@
+{
+    use esmith::config;
+    use esmith::db;
+
+    my %processmail;
+    tie %processmail, 'esmith::config', '/home/e-smith/db/processmail';
+
+    # word filter, unix text file with bad words to match
+    if ( -e "/opt/wordfilter")
+    {
+      my $WordFilter  = db_get_prop(\%processmail, 'maildrop', "WordFilter") || 'no';
+
+      if ($WordFilter =~ /(junkmail|delete)/)
+      {
+        my $target;
+        my $targetlog;
+
+        if ($WordFilter eq 'junkmail')
+        {
+        	$targetlog = 'to junkmail';
+        	$target    = 'to Maildir/.junkmail';
+        }
+        elsif ($WordFilter eq 'delete')
+        {
+        	$targetlog = 'delete';
+        	$target    = 'exit';
+        }
+        # bypass large email so we don't slow down server
+        # assume most offending emails are small
+
+        $OUT .= "\n";
+        $OUT .= "# ----- word filter ---\n";
+        $OUT .= "if (\$SIZE < 5000 )\n";
+        $OUT .= "\{\n";
+        $OUT .= "  if ( /.*/:b && lookup( \$MATCH, \"/opt/wordfilter\" ))\n";
+        $OUT .= "  \{\n";
+        $OUT .= "  log \"--------- word filter -- \"\n";
+        $OUT .= "  log \"--- ----- $targetlog -- \"\n";
+        $OUT .= "  $target    \n";
+        $OUT .= "  \}\n";
+        $OUT .= "\}\n";
+      }
+    }
+} 

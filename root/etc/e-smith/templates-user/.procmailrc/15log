@@ -1,0 +1,47 @@
+{
+    use esmith::config;
+    use esmith::db;
+
+    my %processmail;
+    tie %processmail, 'esmith::config', '/home/e-smith/db/processmail';
+
+    $OUT = '';
+
+    # control level of logging
+    my $loglevel  = db_get_prop(\%processmail, $USERNAME, "loglevel") || 'some';
+    if ($loglevel eq 'none')
+    {
+      $OUT .= "\n";
+      $OUT .= "# ----  no logging ------------------\n";
+    }
+    elsif ($loglevel eq 'some')
+    {
+      $OUT .= "\n";
+      $OUT .= "# ----  some logging------------------\n";
+      $OUT .= "VERBOSE=no\n";
+	if ($USERNAME ne "admin")
+		{
+		$OUT .= "LOGFILE=\$HOME/procmail.log\n";
+		}
+	if ($USERNAME eq "admin")
+		{
+		$OUT .= "LOGFILE=/home/e-smith/procmail.log\n";
+		}
+    }
+    else
+    {
+      $OUT .= "\n";
+      $OUT .= "# ---- verbose, for debugging only --------------\n";
+      $OUT .= "VERBOSE=yes\n";
+      $OUT .= "LOGABSTRACT=all\n";
+	if ($USERNAME ne "admin")
+		{
+		$OUT .= "LOGFILE=\$HOME/procmail.log\n";
+		}
+	if ($USERNAME eq "admin")
+		{
+		$OUT .= "LOGFILE=/home/e-smith/procmail.log\n";
+		}
+   
+    }
+}

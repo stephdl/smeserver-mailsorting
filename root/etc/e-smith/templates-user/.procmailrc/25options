@@ -1,0 +1,6 @@
+{
+      $OUT .= "\n";
+      $OUT .= "# ----  delete duplicates -------\n";
+      $OUT .= ":0 Wh: msgid.lock\n";
+      $OUT .= "| \$FORMAIL -D 8192 msgid.cache\n";
+}

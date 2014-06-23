@@ -1,0 +1,134 @@
+<lexicon lang="it">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Elaborazione Mail</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>configura l'ordinamento della posta</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Regole di ordinamento Email</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Le regole sono eseguite sul server all'arrivo di un messaggio e sono indipendenti dal client email usato. Le tue regole, se ce ne sono, sono elencate sotto.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Regole correnti</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Stai rimuovendo una regola</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Errore nell'aggiornamento</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Selezionare la parte di messaggio da controllare. Si può utilizzare per il confronto parte del messaggio, l'intestazione, l'oggetto o la dimensione del messaggio. Dimensione in bytes. Cancella, ordina o inoltra ciascuna delle corrispondenzei. La seconda corrisponenza è facoltativa, ma se utilizzata entrambe le condizioni devono essere soddisfatte.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Confronta con</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>Seconda corrispondenza</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>Regola</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>Seconda regola</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Cartella o indirizzo email</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Inoltra</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Copia</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>Seconda azione</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Smista nella cartella</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Inoltra mail</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Elimina mail</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Invia nella mia Posta in arrivo</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Ordine di esecuzione delle regole</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Oggetto</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>A</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>Da</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Headers email</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Dimensione maggiore di</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Dimensione minore di</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Errore: è necessaria una cartella di destinazione o un indirizzo di destinazione</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Non ci sono regole definite</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Lo smistamento posta su questo server è stato disattivato, si prega di contattare l'amministratore.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Lo smistamento posta per questo utente è stato disattivato, si prega di contattare l'amministratore.</trans>
+    </entry>
+</lexicon>

@@ -1,0 +1,16 @@
+#!/usr/bin/perl -w
+
+use esmith::Build::CreateLinks qw(:all);
+use File::Basename;
+use File::Path;
+
+event_link("mailsorting-cleanup", "user-delete", "65");
+
+event_link("mailsorting-update-user", 'mailsorting-conf', "20");
+event_link("qmail-update-user",       'mailsorting-conf',  "30");
+
+event_link("mailsorting-update-user", "email-update-quick",  "20");
+event_link("mailsorting-update-user", "email-update",  "20");
+event_link("mailsorting-update-user", "user-create",  "60");
+event_link("mailsorting-update-user", "user-modify",  "60");
+event_link("mailsorting-update-user", "bootstrap-console-save",  "60");

@@ -1,0 +1,134 @@
+<lexicon lang="de">
+    <entry>
+        <base>Process Mail</base>
+        <trans>E-Mail Verteilung</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>E-Mail-Verteilung konfigurieren</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>E-Mail Verteilungsregeln</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Mit den E-Mail Verteilungsregeln können Sie die in Ihren E-Mail Posteingang eintreffenden Nachrichten detailliert analysieren lassen und durch Regeln automatisch löschen, verschieben oder weiterleiten lassen. Die Regeln sind von Ihrem E-Mail-Client unabhängig und werden ausgeführt, sobald E-Mail in Ihrer Mailbox auf dem Server eintrifft. Ihre aktuellen Regeln sind hier in einer Liste aufgeführt.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Aktuelle Regeln</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Sie sind dabei, eine Regel zu löschen</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Fehler beim Aktualisieren</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Geben Sie an, welcher Teil der E-Mail analysiert werden soll. Dabei können Sie zwischen Teil der E-Mail-Adresse, Kopfzeile, Betreff oder der Größe der E-Mail wählen. Die Größe wird in Bytes angegeben und kann anhand der E-Mail Logdateien verfolgt werden. Gefundene Treffer können gelöscht, verschoben oder weitergeleitet werden. Eine zweite Analyse ist optional. Wenn Sie eingesetzt wird, müssen beide Regeln für das Ausführen einer Aktion erfüllt sein.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>1. Analyse von</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>2. Analyse von</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>1. Suchtext</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>2. Suchtext</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Verzeichnis oder E-Mailadresse für die Weiterleitung</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Weiterleiten</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Kopieren</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>2. Aktion</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>In Mailordner verschieben</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>E-Mail weiterleiten</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>E-Mail löschen</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>In meinen Posteingang senden</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Reihenfolge der Regelausführung</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Betreff</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>An</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>Von</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>E-Mail Kopfzeile</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Größe größer als</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Größe weniger als</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Fehler: Es ist ein Zielverzeichnis für die Sortierung erforderlich oder eine E-Mail Adresse an die weitergeleitet werden kann</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Sie haben keine Regeln definiert</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Die E-Mail-Verteilung wurde für diesen Server deaktiviert. Wenden Sie sich bitte an Ihren Administrator.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Die E-Mail-Verteilung wurde für diesen Benutzer deaktiviert. Wenden Sie sich bitte an Ihren Administrator.</trans>
+    </entry>
+</lexicon>

@@ -1,0 +1,45 @@
+{
+    use esmith::config;
+    use esmith::db;
+
+    my %accounts;
+    tie %accounts, 'esmith::config', '/home/e-smith/db/accounts';
+
+    # get $USERNAME from esmith::config
+    die "Username criterion missing." unless defined ($USERNAME);
+
+    my $type = db_get_type(\%accounts, $USERNAME);
+
+    die
+        "Account $USERNAME is not a user account; "
+        . "update email forwarding failed.\n"
+            unless $type eq 'user' ||  $USERNAME eq 'admin';
+
+    my %processmail;
+    tie %processmail, 'esmith::config', '/home/e-smith/db/processmail';
+
+    # keep backups
+    my $backup  = db_get_prop(\%processmail, $USERNAME, "backup") || '';
+    if ($backup eq 'yes')
+    {
+      $OUT .= "\n";
+      $OUT .= "# ---- keep backups ----\n";
+      $OUT .= "cc backup\n";
+      $OUT .= "`cd backup/new && rm -f dummy \`ls -t | sed -e 1,50d\``\n";
+    }
+
+    ## delete duplicates
+    my $deldups  = db_get_prop(\%processmail, $USERNAME, "deldups") || 'no';
+    my $globaldeldups  = db_get_prop(\%processmail, 'maildrop', "deldups") || 'no';
+    if (($deldups eq 'yes')  ||($globaldeldups eq 'yes')) 
+    {
+      $OUT .= "\n";
+      $OUT .= "# ----- delete duplicates ---\n";
+      $OUT .= "`reformail -D 8000 duplicate.cache`\n";
+      $OUT .= "if ( \$RETURNCODE == 0 )\n";
+      $OUT .= "\{\n";
+      $OUT .= "log \"--------- duplicate deleted -- \"\n";
+      $OUT .= "exit\n";
+      $OUT .= "\}\n";
+    }
+}

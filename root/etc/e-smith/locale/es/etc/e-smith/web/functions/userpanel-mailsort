@@ -1,0 +1,134 @@
+<lexicon lang="es">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Procesar Email</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>configurar procesaminto de su email</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Reglas de procesamiento de correo</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Las reglas son ejecutadas cuando un email llega a su casilla en el servidor, y es independiente de su cliente de correo. Si ya tiene reglas definidas, las mismas son mostradas debajo.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Reglas actuales</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Esta a punto de eliminar una regla</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Error en la actualización</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Seleccione el elemento del email para hacer coincidir. Puede hacer coincidir una parte de la dirección de email, cabecera, asunto, o tamaño. El tamaño es en bytes. Elimine, Ordene o Redireccione cualquier coincidencia. La segunda coincidencia es opcional, pero si la utiliza, deben coincidir ambas reglas.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Elemento</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>2º Elemento</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>Regla</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>2º regla</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Carpeta o dirección de email</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Redirigir</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Copiar</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>2º Acción</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Enviar a carpeta de email</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Redirigir email</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Eliminar email</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Enviar a mi bandeja de entrada</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Orden de ejecución</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Asunto</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>Destinatario</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>Remitente</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Cabeceras</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Tamaño mayor que</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Tamaño menor que</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Error: Se requiere una carpeta para ordenar en la misma o una dirección de email para reenviar</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>No tiene reglas definidas</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>El procesamiento de correo en este servidor ha sido deshabilitado, contacte con el administrador.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>El procesamiento de correo para este usuario ha sido deshabilitado, contacte al administrador.</trans>
+    </entry>
+</lexicon>

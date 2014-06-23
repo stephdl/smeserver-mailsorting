@@ -1,0 +1,134 @@
+<lexicon lang="ru">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Обработать почту</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>настроить сортировку вашей почты</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Правила сортировки почты</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Rules are executed as email arrives in your mailbox on the server, and are independent of your email client. Your current rules, if you have any are listed below.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Текущие правила</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Вы собираетесь удалить правило</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Ошибка обновления</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Select the part of the email to be tested. You can match against part of an email address, header, subject, or the email size. Size is in bytes. Delete, sort or Forward any matches. The second match is optional, but if used both rules must match.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Не совпадает</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>2-е совпадение</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>Правило</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>2-е правило</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Папка или адрес электронной почты</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Fwd</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Копировать</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>2-е действие</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Сортировать в папку почты</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Переслать письмо</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Удалить письмо</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Отправить в мои входящие</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Порядок применения правил</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Тема</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>Кому</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>От</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Заголовки письма</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Размер более чем</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Размер менее чем</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Error: Requires a folder to sort to or email address to forward to</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Вы не определили правила</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Сортировка почты была отключена на этом сервере, пожалуйста, обратитесь к администратору.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Сортировка почты была отключена для этого пользователя, пожалуйста, обратитесь к администратору.</trans>
+    </entry>
+</lexicon>

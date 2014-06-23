@@ -1,0 +1,41 @@
+#!/usr/bin/perl -w
+
+#----------------------------------------------------------------------
+# copyright (C) 1999-2001 e-smith, inc.
+#
+# Author: Stephen Noble
+# Contributor: Darrell May
+#
+#----------------------------------------------------------------------
+
+package esmith;
+
+use strict;
+use Errno;
+use esmith::config;
+use esmith::util;
+use esmith::db;
+
+my %processmail;
+tie %processmail, 'esmith::config', '/home/e-smith/db/processmail';
+
+my $event = $ARGV [0];
+my $userName = $ARGV [1];
+die "Username argument missing." unless defined ($userName);
+
+    db_delete(\%processmail, $userName);
+
+    #get all users rules
+    my @userRules = ();
+    foreach (sort keys %processmail)
+    {
+        push (@userRules, $_)
+            if (db_get_type(\%processmail, $_) eq "$userName");
+    }
+
+    foreach (sort @userRules)
+    {
+      db_delete(\%processmail, $_);
+    }
+
+exit (0);

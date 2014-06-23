@@ -1,0 +1,172 @@
+#!/usr/bin/perl -wT
+
+#----------------------------------------------------------------------
+# heading     : Your Settings
+# description : Process Mail
+# longdesc    : configure your email sorting
+# navigation  : 100 500
+#
+# Modified (c) 2002,2006 Stephen Noble <support@dungog.net>
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+#----------------------------------------------------------------------
+
+use strict;
+use warnings;
+
+use esmith::FormMagick::Panel::mailsort;
+
+my $fm = esmith::FormMagick::Panel::mailsort->new();
+$fm->display();
+
+__DATA__
+<form title="FORM_TITLE"
+    header="/etc/e-smith/web/common/head.tmpl"
+    footer="/etc/e-smith/web/common/foot.tmpl">
+
+    <page
+        name="First"
+        pre-event="print_status_message()">
+
+        <description>FORM_DESCRIPTION</description>
+
+        <subroutine src="filter_status" />
+        <subroutine src="user_status" />
+
+        <field type="literal" id="User" value="get_panel_user()">
+            <label>ACCOUNT</label>
+        </field>
+
+        <field type="literal" id="FullName" value="get_full_name()">
+            <label>USER_NAME</label>
+        </field>
+
+        <field
+            type="literal"
+            id="button_configuration"
+            value="">
+            <description>ADD_RULE</description>
+        </field>
+
+        <subroutine src="print_rules_table" />
+
+    </page>
+
+    <page
+        name="RULE_MODIFY"
+        pre-event="turn_off_buttons()"
+        post-event="save_rule()">
+
+        <subroutine src="modify_or_create_description" />
+
+        <field
+          type="select"
+          id="basis"
+          options="'Subject',
+                   'TO_',
+                   'From',
+                   'headers',
+                   'sizegt',
+                   'sizelt',"
+          value="">
+          <label>BASIS</label>
+        </field>
+
+        <field
+          type="text" size="40"
+          id="criterion"
+          value=""
+          validation="nonblank()">
+          <label>CRITERION</label>
+        </field>
+
+        <field
+          type="select"
+          id="basis2"
+          options="'',
+                   'Subject',
+                   'TO_',
+                   'From',
+                   'headers',"
+          value="">
+          <label>2ND_BASIS</label>
+        </field>
+
+        <field
+          type="text" size="40"
+          id="criterion2"
+          value="">
+          <label>2ND_CRITERION</label>
+        </field>
+
+        <field
+          type="select"
+          id="action"
+          options="'sort'    => 'SORT',
+                   'forward' => 'FORWARD',
+                   'delete'  => 'DELETE',"
+          value="">
+          <label>ACTION</label>
+        </field>
+
+        <field
+          type="text" size="40"
+          id="deliver"
+          value=""
+          validation="nonblankWithForward()">
+          <label>DELIVER</label>
+        </field>
+
+        <field
+          type="select"
+          id="copy"
+          options="'no'  => 'NO',
+                   'yes' =>  'YES',"
+          value="">
+          <label>COPY</label>
+        </field>
+
+        <field
+          type="select"
+          id="action2"
+          options="''        => '',
+                   'inbox'   => 'INBOX',
+                   'forward' => 'FORWARD',
+                   'delete'  => 'DELETE',"
+          value="">
+          <label>2ND_ACTION</label>
+        </field>
+
+        <field
+          type="text" size="40"
+          id="deliver2"
+          value=""
+          validation="nonblankWithForward2()">
+          <label>DELIVER</label>
+        </field>
+
+        <subroutine src="priority" />
+
+        <subroutine src="print_button('SAVE')" />
+
+    </page>
+
+    <page
+        name="RULE_REMOVE"
+        pre-event="turn_off_buttons()"
+        post-event="remove_rule()">
+
+        <field
+          type="literal"
+          id="desc">
+          <label>REMOVE_DESCRIPTION</label>
+        </field>
+
+        <subroutine src="print_button('REMOVE')" />
+    </page>
+
+</form>

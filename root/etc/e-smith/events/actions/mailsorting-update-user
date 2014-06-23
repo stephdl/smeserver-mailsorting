@@ -1,0 +1,84 @@
+#!/usr/bin/perl -w
+
+#----------------------------------------------------------------------
+# copyright (C) 1999-2005 Mitel Networks Corporation
+#
+# This program is free software; you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation; either version 2 of the License, or
+# (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.	See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program; if not, write to the Free Software
+# Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA 02111-1307  USA
+#
+#----------------------------------------------------------------------
+
+package esmith;
+
+use strict;
+use Errno;
+use esmith::ConfigDB;
+use esmith::AccountsDB;
+use esmith::templates;
+
+my $accountsdb = esmith::AccountsDB->open_ro or
+    die "Could not open accounts db\n";
+
+my $event = shift;
+my $userName = shift;
+my @users;
+
+if (defined $userName)
+{
+    my $user = $accountsdb->get($userName);
+    die
+	"Account $userName is not a user account; update mailsorting failed.\n"
+	unless ($user && $user->prop('type') eq "user" || $userName eq "admin");
+    @users = ($user);
+my $geekmode = $user->prop('geekmode') || 'disabled';
+    if($geekmode eq "enabled"){
+        print "User $userName in geek mode, do not update mailfilter and procmail rules.\n";
+        exit;
+    }
+}
+else
+{
+    @users = ( $accountsdb->users );
+    push(@users, $accountsdb->get('admin'));
+}
+
+foreach my $userName (@users)
+{
+    $userName = $userName->key;
+
+    for my $dotfile ( qw(.procmailrc .mailfilter) )
+    {
+my $pathtohome = ($userName eq 'admin')? "/home/e-smith":"/home/e-smith/files/users/$userName";
+
+        esmith::templates::processTemplate (
+	{
+	    MORE_DATA			=>
+		{
+		    USERNAME => $userName ,
+		},
+	    TEMPLATE_PATH		=> "/$dotfile",
+	    TEMPLATE_EXPAND_QUEUE	=>
+		[
+		    "/etc/e-smith/templates-user-custom",
+		    "/etc/e-smith/templates-user",
+		],
+	    OUTPUT_PREFIX		=> $pathtohome,
+	    UID				=> $userName,
+	    GID				=> $userName,
+	    PERMS			=> 0600,
+        } );
+    };
+}
+
+exit (0);

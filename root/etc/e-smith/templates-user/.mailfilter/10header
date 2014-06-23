@@ -1,0 +1,9 @@
+# ---------------------------------------
+# ~/.mailfilter
+# ---------------------------------------
+
+DEFAULT=$HOME/Maildir/
+SENDMAIL="/var/qmail/bin/sendmail"
+reformail="/usr/bin/reformail"
+SHELL="/bin/bash"
+

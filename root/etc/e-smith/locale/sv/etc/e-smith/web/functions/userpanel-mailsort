@@ -1,0 +1,134 @@
+<lexicon lang="sv">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Behandla e-post</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>konfigurera din e-postsortering</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Sorteringsregler för e-post</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Reglerna exekveras när e-post anländer i din postlåda på servern och är ej knutna till din e-postklient. Dina nuvarande regler, om du har några, listas nedan.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Nuvarande regler</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Du håller på att ta bort en regel</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Fel vid uppdateringen</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Välj vilken del av e-postmeddelandet som du vill matcha. Du kan matcha mellan del av e-postadressen, huvud, ämne eller e-poststorlek. Storlek i bytes. Radera, sortera eller vidarebefordra alla matchningar. Den andra matchningen är valfri men om den används måste båda reglerna matcha.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Matcha mot</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>2:a matchningen</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>Regeln</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>Andra regeln</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Mapp eller e-postadress</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Vbf</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Kopiera</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>2:a åtgärden</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Sortera till e-postfoldern</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Vidarebefordra e-post</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Radera e-post</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Skicka till min inkorg</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Ordning på regelkörning</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Ämne</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>Till</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>Från</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>E-posthuvuden</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Storlek större än</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Storlek mindre än</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Fel: Det krävs en mapp att sortera till eller en e-postadress att skicka till</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Du har inga regler definierade</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>E-postsortering på denna server har avaktiverats, kontakta din administratör.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>E-postsortering för denna användare har avaktiverats, kontakta din administratör.</trans>
+    </entry>
+</lexicon>

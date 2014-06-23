@@ -1,0 +1,134 @@
+<lexicon lang="ja">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Process Mail</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>configure your email sorting</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Mail sorting rules</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Rules are executed as email arrives in your mailbox on the server, and are independent of your email client. Your current rules, if you have any are listed below.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Current rules</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>You are about to remove a rule</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Error updateing</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Select the part of the email to be tested. You can match against part of an email address, header, subject, or the email size. Size is in bytes. Delete, sort or Forward any matches. The second match is optional, but if used both rules must match.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Match against</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>2nd Match</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>The rule</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>2nd rule</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Folder or email address</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Fwd</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>コピー</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>2nd Action</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Sort to mail folder</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Forward email</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Delete email</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Send to my inbox</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Order of rule execution</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>件名</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>To</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>From</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Email Headers</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Size greater than</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Size less than</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Error: Requires a folder to sort to or email address to forward to</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>You have no rules defined</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Mail sorting on this server has been disabled, please contact your administrator.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Mail sorting for this user has been disabled, please contact your administrator.</trans>
+    </entry>
+</lexicon>

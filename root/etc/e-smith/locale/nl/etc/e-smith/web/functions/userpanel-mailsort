@@ -1,0 +1,134 @@
+<lexicon lang="nl">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Verwerk E-mail</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>instellen van uw e-mail sortering</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>E-mail sorteer regels</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Regels worden uitgevoerd als de e-mail arriveert in uw brievenbus op de server en is onafhankelijk van uw e-mail client software. Uw huidige regels, als u die hebt, worden hieronder weergegeven.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Huidige regels</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>U gaat een regel verwijderen</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Fout bij wijzigen</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Kies het deel van de e-mail om getest te worden. U kunt vergelijken met een deel van het e-mail adres, berichtkop, onderwerp of de omvang. De omvang is in bytes. Verwijder, sorteer of doorsturen bij elke overeenkomst. De tweede vergelijking is optioneel maar als beide regels worden gebruikt moeten ze ook overeenkomen.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Vergelijk met</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>2e Vergelijking</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>De regel</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>2e regel</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Map of e-mailadres</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Ds</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Kopie</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>2e Actie</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Sorteer naar e-mail map</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Stuur e-mail door</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Verwijder e-mail</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Stuur naar mijn postvak in</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Volgorde van regel uitvoering</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Onderwerp</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>Aan</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>Van</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>E-mail berichtkoppen</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Omvang meer dan</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Omvang minder dan</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Fout: Er is een map nodig om naar te sorteren of een e-mailadres om het bericht naar door te sturen</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>U hebt geen regels gedefineerd</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>E-mail sortering is op deze server uitgeschakeld, neem contact op met uw systeembeheerder.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>E-mail sortering is voor deze gebruiker uitgeschakeld, neem contact op met uw systeembeheerder.</trans>
+    </entry>
+</lexicon>

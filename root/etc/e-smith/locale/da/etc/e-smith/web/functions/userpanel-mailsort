@@ -1,0 +1,134 @@
+<lexicon lang="da">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Behandl post</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>opsæt din postsortering</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Postsorteringsregler</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Regler udføres når e-post ankommer i din postkasse på serveren, og er uafhængig af din e-postklient. Dine nuværende regler, hvis du har nogen, er listet nedenfor.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Nuværende regler</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Du er ved at fjerne en regel</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Fejl ved opdatering</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Vælg del af mailen til test. Du kan matche mellem dele af en emailadresse, overskrift, emne eller størrelsen af email. Størrelse angive i bytes. Slet, sorter eller videresend alle der matcher. Den anden match er valgfri. og hvis den bruges skal begge regler matche.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Sammenlign med</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>Anden match</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>Regel</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>Anden regel</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Mappe eller e-post adresse</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>VS</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Kopier</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>Anden handling</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Sorter til postmappe</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Videresend email</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Slet email</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Send til min indbakke</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Rækkefølge for eksekvering af regler</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Emne</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>Til</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>Fra</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Email overskrift</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Størrelse større end</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Størrelse mindre end</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Fejl: Kræver en mappe at kunne sortere til, eller en e-post adresse at videresende til</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Du har ikke defineret nogen regler</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Sortering af mail er deaktiveret, kontakt din administrator.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Sortering af mail er deaktiveret for denne bruger, kontakt din administrator.</trans>
+    </entry>
+</lexicon>

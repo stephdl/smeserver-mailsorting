@@ -1,0 +1,18 @@
+{
+      $OUT .= "\n";
+      $OUT .= "# ----  to the inbox------------------\n";
+
+      if (($zarafa1 eq 'enabled') || ($zarafa2 eq 'enabled'))
+      { 
+        $OUT .= ":0\n";
+        $OUT .= "| zarafa-dagent $USERNAME \n"; 
+      }  
+      else
+      {
+        $OUT .= ":0\n";
+        $OUT .= "\$DEFAULT\n";
+      }
+
+      $OUT .= "\n";
+      $OUT .= "# ----  end of rules ------------------\n";
+}

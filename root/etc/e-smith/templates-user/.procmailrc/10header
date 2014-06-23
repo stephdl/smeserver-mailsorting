@@ -1,0 +1,24 @@
+{
+ if ($USERNAME ne 'admin')
+	{
+	$OUT .= "# ---- Defaults ------------------\n";
+	$OUT .= "SHELL=/bin/bash\n";
+	$OUT .= "DEFAULT=\$HOME/Maildir/\n";
+	$OUT .= "FORMAIL=/usr/bin/formail\n";
+	$OUT .= "MAILDIR=\$HOME/Maildir/\n";
+	$OUT .= "PMDIR=\$HOME\n";
+	$OUT .= "SENDMAIL=/usr/sbin/sendmail\n";
+	}
+
+elsif ($USERNAME eq 'admin')
+	{
+	$OUT .= "#  ---- Defaults ------------------\n";
+	$OUT .= "SHELL=/bin/bash\n";
+	$OUT .= "DEFAULT=/home/e-smith/Maildir/\n";
+	$OUT .= "FORMAIL=/usr/bin/formail\n";
+	$OUT .= "MAILDIR=/home/e-smith/Maildir/\n";
+	$OUT .= "PMDIR=/home/e-smith\n";
+	$OUT .= "SENDMAIL=/usr/sbin/sendmail\n";
+	}
+}
+

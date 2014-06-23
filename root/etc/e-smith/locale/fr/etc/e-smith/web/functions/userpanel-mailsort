@@ -1,0 +1,134 @@
+<lexicon lang="fr">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Traiter le courrier</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>Configurer le tri de vos courriels</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Règles de tri des courriels</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Les règles sont exécutées au fur et à mesure que les emails arrivent dans votre boite email sur le serveur, et sont indépendantes de votre client de messagerie. Vos règles en cours d'utilisation sont affichées ci-dessous (si vous en avez créé).</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Ajouter une nouvelle règle</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Règles en cours d'utilisation</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Vous êtes sur le point de supprimer une règle</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Erreur pendant la mise à jour</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Sélectionnez la partie de l'email que vous voulez tester. Vous pouvez rechercher tout ou partie d'une adresse email, entête, sujet, ou taille de l'email. La taille est en octets. Supprimez, triez, transmettez toutes concordances. La seconde concordance est facultative, mais si elle est utilisée, les 2 règles doivent concorder.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modifiez votre règle. <P></p> Vous pouvez changer l'ordre d'exécution des règles en modifiant la valeur numérique dans l'Ordre d'exécution. La priorité est déterminée par une valeur ASCII et doit être unique. exemple : la règle user101 sera prioritaire sur user5 et user99 car 1<5<9 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Concordance</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>2ème concordance</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>Règle</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>2ème règle</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Dossier ou adresse email </trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Tr</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Copier</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>2ème action</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Déplacer l'email dans le dossier</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Transférer l'email à</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Supprimer l'email</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Envoyer dans la Boîte de réception</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Ordre d'exécution</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Sujet</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>A</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>De</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Entêtes email</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Taille supérieure à</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Taille inférieure à</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Erreur: Nécessite un dossier pour le tri ou une adresse email pour le transfert</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Vous n'avez aucunes règles définies</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Le tri d'email a été désactivé sur ce serveur, veuillez contacter votre administrateur.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Le tri d'email pour cet utilisateur a été désactivé sur ce serveur, veuillez contacter votre administrateur.</trans>
+    </entry>
+</lexicon>

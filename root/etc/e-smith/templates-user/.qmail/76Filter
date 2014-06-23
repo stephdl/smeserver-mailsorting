@@ -1,0 +1,36 @@
+{
+  if ($qmail{FilterOrder})
+  {
+    return '# qmail FilterOrder enabled'
+  }
+  else
+  {
+    
+    if ($props{MailFilter})
+    {
+      my $MailFilter = $props{MailFilter}  || 'on';
+
+      return '# Procmail/Maildrop disabled for this user'
+	    if ($MailFilter eq 'bypass');
+    }
+
+    if ($props{EmailForward})
+    {
+      my $EmailForward = $props{EmailForward}  || 'on';
+
+      return '# Procmail/Maildrop disabled for forwarding mail purpose'
+            if ($EmailForward eq 'forward');
+    }
+
+    if ($qmail{FilterType})
+    {
+      return '| /usr/bin/procmail ~/.procmailrc ; if [ $? -ne 0 ] ; then exit -1; else exit 99; fi;'
+	    if ($qmail{FilterType} eq 'procmail');
+
+      return '| /usr/bin/maildrop ; if [ $? -ne 0 ] ; then exit -1; else exit 99; fi;'
+	    if ($qmail{FilterType} eq 'maildrop' );
+    }
+
+    return '# Procmail/Maildrop disabled for all users'
+  }
+}

@@ -1,0 +1,167 @@
+{
+    use esmith::config;
+    use esmith::db;
+
+    my %processmail;
+    tie %processmail, 'esmith::config', '/home/e-smith/db/processmail';
+
+    # get users rules
+    my @pmRules = ();
+    foreach (sort keys %processmail)
+    {
+        push (@pmRules, $_)
+            if (db_get_type(\%processmail, $_) eq $USERNAME);
+    }
+
+    # if they have rules add them to the templete
+    my $pmRules = @pmRules || '0';
+    if ($pmRules > 0)
+    {
+      $OUT .= "\n";
+      $OUT .= "# ----  user rules ------------------\n";
+
+      my $pmRule;
+      foreach $pmRule (sort @pmRules)
+      {
+        my $basis      = db_get_prop(\%processmail, $pmRule, "basis")      || '';
+        my $criterion  = db_get_prop(\%processmail, $pmRule, "criterion")  || '';
+        my $basis2     = db_get_prop(\%processmail, $pmRule, "basis2")     || '';
+        my $secondtest = db_get_prop(\%processmail, $pmRule, "basis2")     || '';
+        my $criterion2 = db_get_prop(\%processmail, $pmRule, "criterion2") || '';
+        my $deliver    = db_get_prop(\%processmail, $pmRule, "deliver")    || '';
+        my $deliver2   = db_get_prop(\%processmail, $pmRule, "deliver2")   || '';
+        my $copy       = db_get_prop(\%processmail, $pmRule, "copy")       || '';
+        my $action     = db_get_prop(\%processmail, $pmRule, "action")     || '';
+        my $action2    = db_get_prop(\%processmail, $pmRule, "action2")    || '';
+
+        #allow for spaces _ to \_
+        unless (($zarafa1 eq 'enabled') || ($zarafa2 eq 'enabled'))
+        { 
+          $deliver       =~ s/ /\\ /g;
+          $deliver2      =~ s/ /\\ /g;
+        }
+
+        foreach ($basis, $basis2)
+        {
+          ##  headers include the basis in the criterion
+          if ($_ eq 'headers')
+          {
+            $_ = '';
+          }
+
+          ## size doesn't use  '^.  *' but needs a space
+          if ($_ ne '<')
+          {
+            if ($_ ne '>')
+            { 
+                #[sme 2264] remove .* after TO_ macro
+                if ($_ eq 'TO_')
+                {
+                #[sme 6061 remove space after TO_
+                   $_ = "^"."$_"."";
+                }  
+                else
+                {    
+                   $_ = "^"."$_".".*";
+                }   
+            }
+            else
+            {
+              $_ = $_.' ';
+            }
+          }
+          else
+          {
+            $_ = $_.' ';
+          }
+        }
+
+        ##construct the deliver line
+        if (($action eq 'sort') || ($action eq 'create'))
+        {
+          # to a folder
+          if (($zarafa1 eq 'enabled') || ($zarafa2 eq 'enabled'))
+          { 
+            if ($deliver eq 'junkmail')
+            { $deliver = "| zarafa-dagent -j $USERNAME"; }
+            else
+            { $deliver = "| zarafa-dagent $USERNAME -C -F 'Inbox\\$deliver'"; }
+          }  
+          else
+          { $deliver = "\$MAILDIR/".'.'."$deliver"."/"; }
+        }
+        elsif ($action eq 'forward')
+        {
+          # to an email
+          $deliver = "! "."$deliver";
+        }
+        elsif ($action eq 'delete')
+        {
+          # delete it
+          $deliver = '/dev/null';
+        }
+        else
+        {
+          # freeform
+          $deliver = "$deliver";
+        }
+
+        ##construct the 2nd deliver line
+        if ($action2 eq 'sort')
+        {
+          # to a folder
+          if (($zarafa1 eq 'enabled') || ($zarafa2 eq 'enabled'))
+          { 
+            if ($deliver eq 'junkmail')
+            { $deliver = "| zarafa-dagent -j $USERNAME"; }
+            else
+            { $deliver = "| zarafa-dagent $USERNAME -C -F 'Inbox\\$deliver'"; }
+          }  
+          else
+          { $deliver = "\$MAILDIR/".'.'."$deliver2"."/"; }
+        }
+        elsif ($action2 eq 'forward')
+        {
+          # to an email
+          $deliver2 = "! "."$deliver2";
+        }
+
+        ## construct the rule
+        if ($secondtest ne '')
+        {
+          $secondtest = "* "."$basis2"."$criterion2"."\n";
+        }
+
+        if ($copy eq 'no')
+        {
+          $OUT .= "\n";
+          $OUT .= ":0\n";
+          $OUT .= "* "."$basis"."$criterion"."\n";
+          $OUT .= $secondtest;
+          $OUT .= "$deliver\n";
+        }
+        elsif ($copy eq 'yes' && $action2 eq 'inbox')
+        {
+          $OUT .= "\n";
+          $OUT .= ":0 c\n";
+          $OUT .= "* "."$basis"."$criterion"."\n";
+          $OUT .= $secondtest;
+          $OUT .= "$deliver\n";
+        }
+        else
+        {
+          $OUT .= "\n";
+          $OUT .= ":0\n";
+          $OUT .= "* "."$basis"."$criterion"."\n";
+          $OUT .= $secondtest;
+          $OUT .= "\{\n";
+          $OUT .= "   :0 c\n";
+          $OUT .= "   $deliver\n";
+          $OUT .= "   \n";
+          $OUT .= "   :0\n";
+          $OUT .= "   $deliver2\n";
+          $OUT .= "\}\n";
+        }
+      }#foreach rule
+    }#if rules exist
+}

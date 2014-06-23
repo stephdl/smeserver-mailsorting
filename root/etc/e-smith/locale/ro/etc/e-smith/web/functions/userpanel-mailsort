@@ -1,0 +1,134 @@
+<lexicon lang="ro">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Procesează mailurile</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>configurează sortarea emailurilor</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Reguli de sortare mail</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Regulile sunt executate pe măsura sosirii emailurilor pe server și sunt independente de clientul de mail.Regulile curente sunt listate mai jos (dacă există)</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Adaugă regulă nouă</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Reguli curente</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Sunteți pe cale să ștergeți o regulă</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Eroare de actualizare</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Selectați partea de mail ce trebuie testată.Puteți verifica contra unei părți din mail, antet, subiect, dimensiune. Dimensiunea este in octeți. Șterge, sortează sau retransmite în caz de potrivire. Potrivirea secundară este opțională, dar dacă există regulile trebuie să se potrivească împreună.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modifică regula. </p><p> Puteți schimba ordinea în care regulile sunt evaluate prin modificarea valuorii numerice in ordinea dorită de execuție. Prioritatea e determinată de valuarea ascii și trebuie să fie unică. De ex.regula user101 este prima, apoi user5 urmată de user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Confuntă cu</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>Potrivre secundară</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>Regula</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>Regula secundară</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Director sau adresa de email</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Trimite</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Copiază</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>Acțiune secundară</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Sortează în directorul</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Retrimite email</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Șterge email</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Trimite în căsuța de recepție</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Ordine de execuție reguli</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Subiect</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>Către</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>De la</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Antete email</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Dimensiune mai mare de</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Dimensiune mai mică de</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Eroare: Este necesar un director destinație sau o adresă destinație pentru sortare</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Nu sunt reguli definite</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Sortarea mailurilor pe acest server a fost oprită, contactați administratorul.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Sortarea mailurilor pentru acest utilizator a fost oprită, contactați administratorul.</trans>
+    </entry>
+</lexicon>

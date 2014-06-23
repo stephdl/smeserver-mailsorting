@@ -1,0 +1,164 @@
+{
+    use esmith::config;
+    use esmith::db;
+
+    my %conf;
+    tie %conf, 'esmith::config';
+
+    my %accounts;
+    tie %accounts, 'esmith::config', '/home/e-smith/db/accounts';
+
+    die "Username criterion missing." unless defined ($USERNAME);
+
+    my $type = db_get_type(\%accounts, $USERNAME);
+
+    die
+        "Account $USERNAME is not a user account; "
+        . "update email forwarding failed.\n"
+            unless $type eq 'user' || $USERNAME eq 'admin';
+
+    my %processmail;
+    tie %processmail, 'esmith::config', '/home/e-smith/db/processmail';
+
+    # the syntax of imap folder names keeps changing
+    my $sep = '.';
+
+    # get users rules
+    my @pmRules = ();
+    foreach (sort keys %processmail)
+    {
+        push (@pmRules, $_)
+            if (db_get_type(\%processmail, $_) eq $USERNAME);
+    }
+
+    # if they have rules add them to the templete
+    my $pmRules = @pmRules || '0';
+    if ($pmRules > 0)
+    {
+      $OUT .= "\n";
+      $OUT .= "# ----- user rules  ----\n";
+
+      my $pmRule;
+      foreach $pmRule (sort @pmRules)
+      {
+        my $basis      = db_get_prop(\%processmail, $pmRule, "basis")      || '';
+        my $criterion  = db_get_prop(\%processmail, $pmRule, "criterion")  || '';
+        my $basis2     = db_get_prop(\%processmail, $pmRule, "basis2")     || '';
+        my $secondtest = db_get_prop(\%processmail, $pmRule, "basis2")     || '';
+        my $criterion2 = db_get_prop(\%processmail, $pmRule, "criterion2") || '';
+        my $deliver    = db_get_prop(\%processmail, $pmRule, "deliver")    || '';
+        my $deliver1   =  '';
+        my $deliver2   = db_get_prop(\%processmail, $pmRule, "deliver2")   || '';
+        my $copy       = db_get_prop(\%processmail, $pmRule, "copy")       || '';
+        my $action     = db_get_prop(\%processmail, $pmRule, "action")     || '';
+        my $action2    = db_get_prop(\%processmail, $pmRule, "action2")    || '';
+
+          ## headers include the basis in the criterion
+          if ($basis eq 'headers')
+          {
+            $basis = $criterion;
+            $criterion = '';
+          }
+
+          if ($basis2 eq 'headers')
+          {
+            $basis2 = $criterion2;
+            $criterion2 = '';
+          }
+
+        ## convert to procmail 'TO_' macro equivalent  ??
+        foreach ($basis, $basis2)
+        {
+          if ($_ eq 'TO_')
+          {
+            #$_ = '((Original-)?(Resent-)?(To|Cc|Bcc)|(X-Envelope|Apparently(-Resent)?)-To)';
+            $_ = '(To|Cc)';
+          }
+        }
+
+        ## construct the deliver line
+        if ($action eq 'sort')
+        {
+          # to a folder
+          $deliver1 = "to \"Maildir/"."$sep"."$deliver"."/\"";
+        }
+        elsif ($action eq 'forward')
+        {
+          # to an email
+          $deliver1 = "to "."\"!$deliver\"";
+        }
+        elsif ($action eq 'delete')
+        {
+          # delete it, report, and add a blank line
+          $deliver1 = "log \"--- $basis $criterion --deleted --\" \n log \"\" \n exit";
+        }
+        else
+        {
+          # freeform
+          $deliver1 = "$deliver";
+        }
+
+        ## construct the 2nd deliver line
+        if ($action2 eq 'sort')
+        {
+          # to a folder
+          $deliver2 = "\"Maildir/"."$sep"."$deliver2"."/\"";
+        }
+        elsif ($action2 eq 'forward')
+        {
+          # to an email
+          $deliver2 = "\"!$deliver2\"";
+        }
+
+        $OUT .= "\n";
+        if ($secondtest eq '')
+        {
+          if ($basis =~ /(>|<)/)
+          {
+            $OUT .= "if ( \$SIZE $basis $criterion )\n";
+          }
+          else
+          {
+            $OUT .= "if ( /^"."$basis".".*$criterion/ )\n";
+          }
+          $OUT .= "\{\n";
+          $OUT .= "log \"--------- match user rule -- \"\n";
+          $OUT .= "log \"--------- $basis $criterion -- \"\n";
+
+        }
+        #basis2 can't test on size
+        else
+        {
+          if ($basis =~ /(>|<)/)
+          {
+            $OUT .= "if (( \$SIZE $basis $criterion ) && ( /^"."$basis2".".*$criterion2/ ))\n";
+          }
+          else
+          {
+            $OUT .= "if (( /^"."$basis".".*$criterion/) && (/^"."$basis2".".*$criterion2/ ))\n";
+          }
+          $OUT .= "\{\n";
+          $OUT .= "log \"--- match user rule ------------- \"\n";
+          $OUT .= "log \"--- $basis $criterion & $basis2 $criterion2 -- \"\n";
+        }
+
+        if ($copy eq 'no')
+        {
+          $OUT .= "$deliver1\n";
+          $OUT .= "\}\n";
+        }
+        elsif ($copy eq 'yes' && $action2 eq 'inbox')
+        {
+          $OUT .= "cc Maildir\n";
+          $OUT .= "$deliver1\n";
+          $OUT .= "\}\n";
+        }
+        else
+        {
+          $OUT .= "cc $deliver2\n";
+          $OUT .= "$deliver1\n";
+          $OUT .= "\}\n";
+        }
+      }#foreach rule
+    }#if rules exist
+}

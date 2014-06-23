@@ -1,0 +1,134 @@
+<lexicon lang="pt">
+    <entry>
+        <base>Process Mail</base>
+        <trans>Processamento de e-mail</trans>
+    </entry>
+    <entry>
+        <base>configure your email sorting</base>
+        <trans>configure a ordenação do seu e-mail</trans>
+    </entry>
+    <entry>
+      <base>FORM_TITLE</base>
+      <trans>Regras de ordenação do e-mail</trans>
+    </entry>
+    <entry>
+      <base>FORM_DESCRIPTION</base>
+      <trans>Regras são executadas quando o e-mail chega em sua caixa postal no servidor, e são independentes do seu cliente de e-mail. Suas regras atuais, se você tiver alguma, estão listadas abaixo.</trans>
+    </entry>
+    <entry>
+      <base>ADD_RULE</base>
+      <trans><![CDATA[ <a class="button-like" href="userpanel-mailsort?page=0&page_stack=&Next=Next&key=new&basis=Subject&action=sort&RULE_MODIFY">Add new rule</a> ]]></trans>
+    </entry>
+    <entry>
+      <base>CURRENT_RULES</base>
+      <trans>Regras atuais</trans>
+    </entry>
+    <entry>
+      <base>REMOVE_DESCRIPTION</base>
+      <trans>Você está para remover uma regra</trans>
+    </entry>
+    <entry>
+      <base>ERROR_UPDATING</base>
+      <trans>Erro atualizando</trans>
+    </entry>
+    <entry>
+      <base>CREATE_RULE_DESCRIPTION</base>
+      <trans>Selecione a parte do e-mail a ser testada. Você pode testar contra uma parte do endereço de e-mail, cabeçalho, assunto ou o tamanho do e-mail. Tamanho é em bytes. Apagar, ordenar ou encaminhar qualquer ocorrencia. A segunda ocorrencia é opcional, mas se usada ambas as regras devem validar.</trans>
+    </entry>
+    <entry>
+      <base>MODIFY_RULE_DESCRIPTION</base>
+      <trans><![CDATA[ <p> Modify your rule. </p><p> You can change the order in which rules are evaluated by altering the numeric value in order of rule execution. Priority is determined by ascii value, and must be unique. eg rule user101 goes first, then user5 then user99 </p> ]]></trans>
+    </entry>
+    <entry>
+      <base>BASIS</base>
+      <trans>Comparar contra</trans>
+    </entry>
+    <entry>
+      <base>2ND_BASIS</base>
+      <trans>Segunda comparação</trans>
+    </entry>
+    <entry>
+      <base>CRITERION</base>
+      <trans>A regra</trans>
+    </entry>
+    <entry>
+      <base>2ND_CRITERION</base>
+      <trans>Segunda regra</trans>
+    </entry>
+    <entry>
+      <base>DELIVER</base>
+      <trans>Folder or email address</trans>
+    </entry>
+    <entry>
+      <base>COPY_TO</base>
+      <trans>Fwd</trans>
+    </entry>
+    <entry>
+      <base>COPY</base>
+      <trans>Copiar</trans>
+    </entry>
+    <entry>
+      <base>2ND_ACTION</base>
+      <trans>Segunda ação</trans>
+    </entry>
+    <entry>
+      <base>SORT</base>
+      <trans>Ordenar para pasta de e-mail</trans>
+    </entry>
+    <entry>
+      <base>FORWARD</base>
+      <trans>Encaminhar e-mail</trans>
+    </entry>
+    <entry>
+      <base>DELETE</base>
+      <trans>Apagar e-mail</trans>
+    </entry>
+    <entry>
+      <base>INBOX</base>
+      <trans>Enviar para minha Inbox</trans>
+    </entry>
+    <entry>
+      <base>PRIORITY</base>
+      <trans>Ordem de execução da regra</trans>
+    </entry>
+    <entry>
+      <base>Subject</base>
+      <trans>Assunto</trans>
+    </entry>
+    <entry>
+      <base>TO_</base>
+      <trans>Para</trans>
+    </entry>
+    <entry>
+      <base>From</base>
+      <trans>De</trans>
+    </entry>
+    <entry>
+      <base>headers</base>
+      <trans>Cabeçalhos de e-mail</trans>
+    </entry>
+    <entry>
+      <base>sizegt</base>
+      <trans>Tamanho maior que</trans>
+    </entry>
+    <entry>
+      <base>sizelt</base>
+      <trans>Tamanho menor que</trans>
+    </entry>
+    <entry>
+      <base>ERROR_FORWARD_NO_EMAIL</base>
+      <trans>Error: Requires a folder to sort to or email address to forward to</trans>
+    </entry>
+    <entry>
+      <base>NO_RULES</base>
+      <trans>Você não tem regras definidas</trans>
+    </entry>
+    <entry>
+      <base>FILTERTYPE_DISABLED</base>
+      <trans>Ordenação de e-mail neste servidor foi desabilitado, por favor contacte seu administrador.</trans>
+    </entry>
+    <entry>
+      <base>USER_DISABLED</base>
+      <trans>Ordenação de e-mail para este usuário foi desabilitado, por favor contacte seu administrador.</trans>
+    </entry>
+</lexicon>
