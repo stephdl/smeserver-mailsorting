@@ -5,8 +5,8 @@
 Summary: Lets users configure procmail or maildrop rules.
 %define name smeserver-mailsorting
 Name: %{name}
-%define version 1.2
-%define release 45
+%define version 1.4
+%define release 1
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -15,7 +15,7 @@ Group: SMEserver/addon
 Source: %{name}-%{version}.tar.gz
 BuildArchitectures: noarch
 BuildRoot: /var/tmp/%{name}-%{version}
-Requires:  e-smith-release >= 7.0,
+Requires:  e-smith-release >= 8.0,
 Requires: perl-Unicode-IMAPUtf7
 Requires: e-smith-formmagick >= 1.4.0-12
 #Requires:  smeserver-userpanel, userpanel causes endless problems
@@ -27,6 +27,9 @@ SME Server enhancement to enable procmail or maildrop filtering for users.
 Optionally provides user panels where users can create mail rules for themselves
 
 %changelog
+* Mon Jun 23 2014 stephane de Labrusse <stephdl@de-labrusse.fr> 1.4-1.sme
+- Initial release to sme9
+
 * Wed Dec 11 2013 JP Pialasse <tests@pialasse.com> 1.2-45.sme
 - fix bug as admin .procmail was not created [SME: 8023]
 
