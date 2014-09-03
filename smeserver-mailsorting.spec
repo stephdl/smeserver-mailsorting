@@ -15,7 +15,7 @@ Group: SMEserver/addon
 Source: %{name}-%{version}.tar.gz
 BuildArchitectures: noarch
 BuildRoot: /var/tmp/%{name}-%{version}
-Requires:  e-smith-release >= 8.0,
+Requires:  e-smith-release >= 9.0,
 Requires: perl-Unicode-IMAPUtf7
 Requires: e-smith-formmagick >= 1.4.0-12
 #Requires:  smeserver-userpanel, userpanel causes endless problems
