@@ -9,6 +9,19 @@
 
     our $zarafa1 = $props{zarafa} || 'disabled1';
     our $zarafa2 = ${'zarafa-server'}{GlobalForward} || 'disabled2';
+
+    # If Sieve is enabled for user, mails should be delivered through dovecot-lda
+    # rather than going directly to users Maildir. 
+    our $sieveuser = $props{Sieve} || 'disabled';
+    if ($sieveuser eq 'enabled')
+    {
+        our $finaldeliverymethod = 'to "| /usr/libexec/dovecot/deliver"';
+    }
+    else
+    {
+        our $finaldeliverymethod = 'to Maildir';
+    }
+
     our $EmailForward = $props{EmailForward}  || '';
     our $ForwardAddress = $props{ForwardAddress}  || '';
 
