@@ -23,7 +23,7 @@
     {
       $OUT .= "\n";
       $OUT .= "log \"--- to the inbox ----------------- \"\n";
-      $OUT .= "to Maildir";
+      $OUT .= "$finaldeliverymethod";
     }
 
   }
@@ -31,6 +31,6 @@
   {
       $OUT .= "\n";
       $OUT .= "log \"--- to the inbox ----------------- \"\n";
-      $OUT .= "to Maildir\n";
+      $OUT .= "$finaldeliverymethod\n";
   }
 }

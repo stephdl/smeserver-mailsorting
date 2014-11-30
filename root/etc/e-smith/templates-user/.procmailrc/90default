@@ -7,6 +7,11 @@
         $OUT .= ":0\n";
         $OUT .= "| zarafa-dagent $USERNAME \n"; 
       }  
+      elsif (($sieveuser eq 'enabled') && ($sievesupport eq 'enabled'))
+      {
+         $OUT .= ":0 w\n";
+         $OUT .= "\| /usr/libexec/dovecot/deliver\n";
+      }
       else
       {
         $OUT .= ":0\n";

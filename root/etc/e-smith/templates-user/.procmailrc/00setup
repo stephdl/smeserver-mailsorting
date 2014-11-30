@@ -2,11 +2,16 @@
     # vim: ft=perl:
 
     use esmith::AccountsDB;
+    use esmith::ConfigDB;
+    
     our $adb = esmith::AccountsDB->open_ro or die "Couldn't open AccountsDB";
-
+    our $cdb = esmith::ConfigDB->open_ro or die "Couldn't open ConfigDB";
+    
     $user = $adb->get($USERNAME) or die "No user $USERNAME in AccountsDB";
     %props = $user->props;
-
+    
+    our $sievesupport = $cdb->get_prop('sieve','status') || 'enabled';
+    our $sieveuser = $props{Sieve} || 'enabled';
     our $zarafa1 = $props{zarafa} || 'disabled1';
     our $zarafa2 = ${'zarafa-server'}{GlobalForward} || 'disabled2';
     our $EmailForward = $props{EmailForward}  || '';
