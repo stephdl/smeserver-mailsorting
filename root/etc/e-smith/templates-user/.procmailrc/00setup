@@ -7,7 +7,7 @@
     $user = $adb->get($USERNAME) or die "No user $USERNAME in AccountsDB";
     %props = $user->props;
 
-    our $sieveuser = $props{sieve} || 'disabled';
+    our $sieveuser = $props{Sieve} || 'disabled';
     our $zarafa1 = $props{zarafa} || 'disabled1';
     our $zarafa2 = ${'zarafa-server'}{GlobalForward} || 'disabled2';
     our $EmailForward = $props{EmailForward}  || '';
