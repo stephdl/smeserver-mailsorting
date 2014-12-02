@@ -6,7 +6,7 @@ Summary: Lets users configure procmail or maildrop rules.
 %define name smeserver-mailsorting
 Name: %{name}
 %define version 1.4
-%define release 1
+%define release 2
 Version: %{version}
 Release: %{release}%{?dist}
 License: GPL
@@ -27,6 +27,10 @@ SME Server enhancement to enable procmail or maildrop filtering for users.
 Optionally provides user panels where users can create mail rules for themselves
 
 %changelog
+* Tue Dec 2 2014 stephane de Labrusse <stephdl@de-labrusse.fr> 1.4-2.sme
+- allow the possibility to use sieve script if no rules has matched.
+- Code developed by <m.schuh@neckargeo.net> Mats Schuh
+
 * Mon Jun 23 2014 stephane de Labrusse <stephdl@de-labrusse.fr> 1.4-1.sme
 - Initial release to sme9
 
