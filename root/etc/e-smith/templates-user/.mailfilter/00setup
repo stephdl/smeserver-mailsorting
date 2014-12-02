@@ -16,7 +16,7 @@
     # If Sieve is enabled for user, mails should be delivered through dovecot-lda
     # rather than going directly to users Maildir. 
     
-    our $sievesupport = $cdb->get_prop('sieve','status') || 'enabled';
+    our $sievesupport = $cdb->get_prop('sieve','status') || 'disabled';
     our $sieveuser = $props{Sieve} || 'enabled';
     
     if (($sieveuser eq 'enabled') && ($sievesupport eq 'enabled'))
